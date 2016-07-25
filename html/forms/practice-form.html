@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice Form</title>
+</head>
+<body>
+<form action="success.html" method="post">
+	<div>
+		<label>First Name:</label>
+		<input type="text" name="first_name" maxlength="20">
+	</div>
+	<div>
+		<label>Last Name:</label>
+		<input type="text" name="last_name" maxlength="20">
+	</div>
+	<div>
+		<label>Phone Number:</label>
+		<input type="tel" name="cust_tel">
+	</div>
+	<div>
+		<label>When do you want ice cream?</label>
+		<input type="date" name="date">
+		<input type="time" name="time">
+	</div>
+	<div>
+		<label>Preferred Ice Cream:</label>
+		<select name="ice_cream" required>
+			<option value="">Select Flavor:</option>
+			<option value="chocolate">Chocolate</option>
+			<option value="vanilla">Vanilla</option>
+			<option value="swirl">Swirl</option>
+			<option value="strawberry">Strawberry</option>
+		</select>
+	</div>
+	<div>
+		<label><p>How do you like your ice cream?</p></label>
+		<textarea name="Spec_Req" rows="8" cols="40">Special Requests</textarea>
+	</div>
+	<div>
+		<input type="checkbox" name="cb-waiver" value="agree" required>
+		<label>I accept all risk for freezer brain</label>
+	</div>
+	<button type="submit">Get Ice Cream!</button>
+</form>
+</body>
+</html>
