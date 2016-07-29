@@ -1,3 +1,7 @@
+body {
+  max-width: 100%;
+}
+
 blockquote {
   border-left: 5px solid blue;
   padding: 15px;
@@ -18,7 +22,7 @@ cite {
 image, figure, and figcaption CSS if you'd like, 
 but it's optional! */
 img {
-  width: 100%;
+  width: 100%
 }
 
 figure {
@@ -30,3 +34,53 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+#external-links {
+  width: 15%;
+  max-width: 200px;
+  display: block;
+  vertical-align: top;
+  position: fixed;
+}
+
+main {
+  width: 85%;
+  max-width: 756px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 1100px) {
+  #external-links {
+    top: 0px;
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    background-color: white;
+  }
+  main {
+    margin-left: 0%;
+    margin-top: 150px;
+  }
+}
+
+@media screen and (max-width: 175px) {
+  main {
+    margin-top: 190px;
+  }
+}
+
+@media screen and (max-width: 155px) {
+  main {
+    margin-top: 220px;
+  }
+}
+
+/* Rule to make background hot pink when below 500 px
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}
+*\

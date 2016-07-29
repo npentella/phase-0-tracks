@@ -1,6 +1,7 @@
 #octopus {
 	position: absolute;
 	margin-left: 477px;
+	margin-right: 200px;
 	margin-top: 50px;
 	z-index: 1;
 }
