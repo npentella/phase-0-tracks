@@ -1,0 +1,29 @@
+RELEASE 0 - ROBOT IN ELEVATOR
+
+-Determine which floor you need to reach
+-Store floor in memory as `destination_floor`
+-Approach elevator
+-Press elevator call button
+-Until elevator lights-up or dings, or door opens
+	-wait
+-Once elevator arrives and door opens, enter elevator
+-Find button bank
+-Press button with number matching `destination_floor`
+-Until Elevator arrives at `destination floor` and door opens
+	-wait
+Once elevator arrives and door opens, exit elevator.
+
+RELEASE 1 - RIDING A BIKE
+
+-Put on helmet
+-Board Bike
+-Rotate pedals in clockwise direction (from perspective to right of bicycle) until any of the dollowing conditions are met:
+	-An obstacle enters your path
+		-If you can safely steer around it, do so
+		-If you cannot avoid, come to a stop until obstacle is clear
+		-Once clear of obstacle, continue pedaling until any of these conditions are met again
+	-You reach your destination
+		-Dismount bike
+		-Remove helmet
+		-Lock bike
+		-Fist pump
