@@ -1,0 +1,14 @@
+RELEASE 0 - ROBOT IN ELEVATOR
+
+-Determine which floor you need to reach
+-Store floor in memory as `destination_floor`
+-Approach elevator
+-Press elevator call button
+-Until elevator lights-up or dings, or door opens
+	-wait
+-Once elevator arrives and door opens, enter elevator
+-Find button bank
+-Press button with number matching `destination_floor`
+-Until Elevator arrives at `destination floor` and door opens
+	-wait
+Once elevator arrives and door opens, exit elevator.
