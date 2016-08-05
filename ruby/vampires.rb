@@ -83,7 +83,7 @@ while survey_number < employee_count
 
 end
 
-
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 
 
 
