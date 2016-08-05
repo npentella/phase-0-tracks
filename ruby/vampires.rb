@@ -45,6 +45,13 @@ while survey_number < employee_count
 		else puts "Please respond with y/n"
 		end
 	end
+
+	puts "Please enter any allergies, one at a time. When finished, enter done"
+	allergy = nil
+	until (allergy == "done") || (allergy == "sunshine")
+		puts "Enter Allergy.  If finished, type done"
+		allergy = gets.chomp
+	end
 	
 	# Correct Age Detector
 	
@@ -59,7 +66,9 @@ while survey_number < employee_count
 	
 	vampire_results = nil
 	
-	if (name == "Drake Cula") || (name == "Tu Fang")
+	if allergy == "sunshine"
+		vampire_results = "Probably a vampire"
+	elsif (name == "Drake Cula") || (name == "Tu Fang")
 		vampire_results = "Definitely a vampire"
 	elsif gave_correct_age && (wants_garlic || wants_insurance)
 		vampire_results = "Probably not a vampire"
