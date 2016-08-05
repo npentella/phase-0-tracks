@@ -37,6 +37,37 @@ until wants_insurance != nil
 	end
 end
 
+# Correct Age Detector
+
+current_year = Time.new.year
+calculated_age = current_year - year_of_birth
+if (calculated_age - stated_age).abs > 1
+	gave_correct_age = false
+else gave_correct_age = true
+end
+
+#Vampire Detection
+
+vampire_results = nil
+
+if (name == "Drake Cula") || (name == "Tu Fang")
+	vampire_results = "Definitely a vampire"
+elsif gave_correct_age && (wants_garlic || wants_insurance)
+	vampire_results = "Probably not a vampire"
+elsif !gave_correct_age && (!wants_garlic || !wants_insurance)
+	vampire_results = "Probably a vampire"
+elsif (!gave_correct_age && !wants_garlic) && !wants_insurance
+	vampire_results = "Almost certainly a vampire"
+else vampire_results = "Results inconclusive"
+end	
+
+puts vampire_results
+
+
+
+
+
+
 
 
 
