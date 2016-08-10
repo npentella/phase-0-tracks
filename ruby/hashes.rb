@@ -31,5 +31,35 @@ client_prefs[:theme] = gets.chomp
 puts "What is the client's favorite color?"
 client_prefs[:color] = gets.chomp
 
+#CHECK FOR ACCURACY
+
+#Print results as string
+
+#Ask designer if accurate
+accurate_data = nil
+until accurate_data == true
+	puts "please review the following information for accuracy:"
+	client_prefs.each{|key, value| puts "#{key} : #{value}"}
+	puts "Is all this information accurate? (y/n)"
+	accuracy_input = gets.chomp
+	if accuracy_input == "y"
+		puts "thanks for verifying"
+		accurate_data = true
+	elsif accuracy_input == "n"
+		accurate_data = false
+		puts "which field needs updated?"
+		needs_update = gets.chomp
+		puts "what is the correct value for #{needs_update}?"
+		client_prefs[needs_update.to_sym] = gets.chomp
+		else puts "please respond with y or n"
+	end
+end
+
+
+	#If no, end.  If yes, ask which fields
+
+	#update those fields
+
+
 #Print hash
 p client_prefs
