@@ -12,23 +12,58 @@
 # 
 # pokedex{ |poke1, poke2, poke3| puts "#{poke1} GO!! #{poke2} GO!! #{poke3} GO!!"}
 
-olympic_sports = ["basketball", "swimming", "rowing", "soccer"]
+# olympic_sports = ["basketball", "swimming", "rowing", "soccer"]
+# 
+# medal_count = {USA: 32, China: 22, Japan: 12}
+# 
+# olympic_sports.each do |sport|
+# 	puts "#{sport} is an olympic sport."
+# end
+# 
+# medal_count.each do |country, medals|
+# 	puts "#{country} has #{medals} medals"
+# end
+# 
+# olympic_sports.map! do |sport|
+# 	puts "#{sport.upcase} is BIG now!"
+# 	sport.upcase
+# end
+# 
+# p olympic_sports
+# 
+# p medal_count# 
 
-medal_count = {USA: 32, China: 22, Japan: 12}
+numbers = [1, 2, 5, 9]
 
-olympic_sports.each do |sport|
-	puts "#{sport} is an olympic sport."
-end
+numbers.delete_if { |x| x > 2 }
 
-medal_count.each do |country, medals|
-	puts "#{country} has #{medals} medals"
-end
+p numbers
 
-olympic_sports.map! do |sport|
-	puts "#{sport.upcase} is BIG now!"
-	sport.upcase
-end
+###############################
 
-p olympic_sports
+numbers = [1, 2, 5, 9]
 
-p medal_count
+p numbers.select { |x| x < 9 }
+
+p numbers
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
