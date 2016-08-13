@@ -1,8 +1,13 @@
-#Loop until user enters "quit"
 
 name_input = nil
 
 puts "Hello, Agent." 
+
+#Create empty hash to store aliases:
+
+aliases = {}
+
+#Loop until user enters "quit"
 
 until name_input == "quit"
 
@@ -12,7 +17,6 @@ until name_input == "quit"
 	name_input = gets.chomp
 
 	if name_input != "quit"
-	
 
 		# CREATE FAKE NAME
 
@@ -60,13 +64,22 @@ until name_input == "quit"
 			else c = c
 			end
 		end
-	end
 
-	puts "Here is your final code name: #{code_chars.join}"
+		code_name = code_chars.join
+
+		puts "Here is your code name: #{code_name} "
+
+		#Store alias in hash with name input as key
+
+		aliases[name_input] = code_name
+	end	
 end
 
+# p aliases
 
-
+aliases.each do |name, code_name|
+	puts "#{name} is also known as #{code_name}"
+end
 
 
 
