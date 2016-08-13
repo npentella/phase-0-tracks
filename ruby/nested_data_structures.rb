@@ -113,9 +113,14 @@ rio_olympics = {
 	}
 }
 
-p rio_olympics[:countries][:usa][:medal_count].values.each.reduce(:+)
-
-
+puts "The gold medalist in Men's Freestyle was #{rio_olympics[:sports][:swimming][:events][:mens_freestyle][:medalists][:gold][:athlete]} of #{rio_olympics[:sports][:swimming][:events][:mens_freestyle][:medalists][:gold][:country]}"
+puts "The United States has won a total of #{rio_olympics[:countries][:usa][:medal_count].values.each.reduce(:+)} medals at the games."
+puts "The first player selected to the all-olympic basketball team was #{rio_olympics[:sports][:basketball][:all_olympic_team][0]}"
+puts "The full team was as follows:"
+rio_olympics[:sports][:basketball][:all_olympic_team].each do |player|
+	puts player
+end
+puts "Most of the swimming occured at the #{rio_olympics[:sports][:swimming][:venues][0]}, but some occured in the #{rio_olympics[:sports][:swimming][:venues][1]}"
 
 
 
