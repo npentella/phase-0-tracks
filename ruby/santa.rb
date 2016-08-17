@@ -1,4 +1,7 @@
 class Santa
+	attr_reader :reindeer_ranking, :age, :ethnicity
+
+	attr_accessor :gender
 
 	def initialize(gender, ethnicity)
 		puts "Initializing Santa Instance..."
@@ -27,26 +30,6 @@ class Santa
 
 	def get_mad_at(reindeer)
 		@reindeer_ranking.insert(-1, @reindeer_ranking.delete_at(@reindeer_ranking.index(reindeer)))
-	end
-
-	def reindeer_ranking
-		@reindeer_ranking
-	end
-
-	def gender
-		@gender
-	end
-
-	def gender=(new_gender)
-		@gender = new_gender
-	end
-
-	def age
-		@age
-	end
-
-	def ethnicity
-		@ethnicity
 	end
 end
 
