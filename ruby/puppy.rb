@@ -1,12 +1,10 @@
 # BREED(S)------------
-# Terrier
+# Jack Russell
 # 
 # CHARACTERISTICS
 # Name: Varies
 # Age: Varies
 # Shelter: Varies
-# 
-# APPEARANCE
 # Weight: Varies
 # Ear Count: 2
 # Eye Count: 2
