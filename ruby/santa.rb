@@ -1,7 +1,7 @@
 class Santa
-	attr_reader :reindeer_ranking, :age, :ethnicity
+	attr_reader :reindeer_ranking
 
-	attr_accessor :gender
+	attr_accessor :gender, :age, :ethnicity
 
 	def initialize(gender, ethnicity)
 		puts "Initializing Santa Instance..."
@@ -33,6 +33,26 @@ class Santa
 	end
 end
 
+#Build Many Santas
+
+santa_num = 0
+
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+while santa_num < 100
+	santa = Santa.new(example_genders.sample, example_ethnicities.sample)
+	santa.age = rand(140)
+	puts "EXAMPLE SANTA #{santa_num + 1}"
+	puts "Gender: #{santa.gender}"
+	puts "Ethnicity: #{santa.ethnicity}"
+	puts "Age: #{santa.age}"
+	puts "This Santa's favorite reindeer are:"
+	santa.reindeer_ranking.each do |reindeer|
+		puts "#{santa.reindeer_ranking.index(reindeer) + 1}: #{reindeer}"	
+	end
+	santa_num += 1
+end
 
 #THIS WORKS, BUT COMMENTIG IT OUT FOR EASIER DRIVER CODE 
 # santas << Santa.new("female", "african-american")
