@@ -15,9 +15,27 @@ class Santa
 	def eat_milk_and_cookies(cookie)
 		puts "That was a good #{cookie}!"
 	end
+
+	def print_info
+		puts "This Santa is #{@ethnicity} & #{@gender}"
+	end
 end
 
-saint_nick = Santa.new
+# saint_nick = Santa.new
+# 
+# saint_nick.speak
+# saint_nick.eat_milk_and_cookies("Sugar Cookie")
 
-saint_nick.speak
-saint_nick.eat_milk_and_cookies("Sugar Cookie")
+santas = []
+
+santas << Santa.new("female", "african-american")
+santas << Santa.new("male", "Korean")
+santas << Santa.new("fluid gender", "Caucasian")
+
+# p santas
+
+santas.each do |santa|
+	santa.print_info
+	santa.eat_milk_and_cookies("Sugar Cookie")
+	santa.speak
+end
