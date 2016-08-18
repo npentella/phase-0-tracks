@@ -81,19 +81,3 @@ p santa.reindeer_ranking
 p santa.gender
 santa.gender = "bigender"
 p santa.gender
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
