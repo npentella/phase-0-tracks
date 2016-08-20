@@ -9,12 +9,13 @@
 
 "What are you trying to buy today?"
 
-def new_grocery_list(items)
+def new_grocery_list(items = "")
 	grocery_list = {}
 	items_ary = items.split(" ")
 	items_ary.each do |food| 
 		grocery_list[food] = 1		
 	end
+	pretty_list(grocery_list)
 	grocery_list
 end
 # Method to add an item to a list
@@ -24,8 +25,8 @@ end
 	# IF no quantity entered, default to 1
 # output: updated hash with item as key, quantity as value
 
-def item_add(grocery_list, item, quantity = 1)
-	grocery_list[item] = quantity
+def item_add(grocery_list, new_item, quantity = 1)
+	grocery_list[new_item] = quantity
 	grocery_list 
 end
 # Method to remove an item from the list
@@ -34,6 +35,10 @@ end
 	# Match string input to key in hash
 	# delete that key/value pair
 # output: hash
+def item_remove(grocery_list, delete_item)
+	grocery_list.delete(delete_item)
+	grocery_list
+end
 
 # Method to update the quantity of an item
 # input: string of item and integer of new quantity
@@ -41,6 +46,10 @@ end
 	# Match string to key
 	# update quantity
 # output: updated hash
+def quantity_update(grocery_list, item, new_quantity)
+	grocery_list[item] = new_quantity
+	grocery_list
+end
 
 # Method to print a list and make it look pretty
 # input: hash name
@@ -49,17 +58,34 @@ end
 	# print item (key) and quantity (value)
 # output: series of strings
 
+def pretty_list(grocery_list)
+	puts "Here is your grocery list:"
+	grocery_list.each do |item, quantity|
+		puts "#{item}-#{quantity}"
+	end
+	puts "Happy Shopping!"
+end
+
+
 # driver code
 
-grocery_list = new_grocery_list("fishsticks cats dogs children olives peanuts")
+grocery_list = new_grocery_list
+
+grocery_list = item_add(grocery_list, "Lemonade", 2)
+
+grocery_list = item_add(grocery_list, "Tomatoes", 3)
+
+grocery_list = item_add(grocery_list, "Onions", 1)
+
+grocery_list = item_add(grocery_list, "Ice Cream", 4)
+
+grocery_list = item_remove(grocery_list, "Lemonade")
 p grocery_list
 
-grocery_list = item_add(grocery_list, "Deezknutz")
+grocery_list = quantity_update(grocery_list, "Ice Cream", 1)
 p grocery_list
 
-
-
-
+pretty_list(grocery_list)
 
 
 
