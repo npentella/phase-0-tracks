@@ -7,6 +7,16 @@
   	# Print each item and its quantity
 # output: hash of items and quantities
 
+"What are you trying to buy today?"
+
+def new_grocery_list(items)
+	grocery_list = {}
+	items_ary = items.split(" ")
+	items_ary.each do |food| 
+		grocery_list[food] = 1		
+	end
+	grocery_list
+end
 # Method to add an item to a list
 # input: item name and optional quantity
 # steps:
@@ -14,6 +24,10 @@
 	# IF no quantity entered, default to 1
 # output: updated hash with item as key, quantity as value
 
+def item_add(grocery_list, item, quantity = 1)
+	grocery_list[item] = quantity
+	grocery_list 
+end
 # Method to remove an item from the list
 # input: item name as string
 # steps:
@@ -35,8 +49,13 @@
 	# print item (key) and quantity (value)
 # output: series of strings
 
+# driver code
 
+grocery_list = new_grocery_list("fishsticks cats dogs children olives peanuts")
+p grocery_list
 
+grocery_list = item_add(grocery_list, "Deezknutz")
+p grocery_list
 
 
 
