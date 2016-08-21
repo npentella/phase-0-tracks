@@ -87,14 +87,16 @@ p grocery_list
 
 pretty_list(grocery_list)
 
+# REFLECT
 
+# I learned that taking the time to write complete pseudocode can save you a lot of time when you're writing the actual code.
 
+# For this challenge, it would have been a little easier to write the code using a hash.  We could have just added the items to the list the number of times they were entered.  Using hashes, however, allowed us to more logically organize the data where we can look-up a quantity using the item as the key.
 
+# A method returns the last line of code in the method.  This is the implicit return in Ruby where you don;t need to explicitly type 'return'.
 
+# You can pass just about any object into a method as a parameter.  Anyhting that is passed in can be used within the method.
 
+# To pass information between methods, you will generally need to save the return of one method in the global scope.  It can sometimes be easiest to nest methods within one another.  Of course, this is all different when you are creating your own classes.
 
-
-
-
-
-
+#  This challenge really helped solidify my understanding of what variables are available in methods and how you can make sure the changes "stick."
