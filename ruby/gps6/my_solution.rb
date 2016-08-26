@@ -70,9 +70,11 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
-
-STATE_DATA.each do |state|
-  viruspredictor.
+STATE_DATA.each do |state, state_data|
+  p state
+  viruspredictor = VirusPredictor.new(state,state_data[:population_density],state_data[:population])
+  viruspredictor.virus_effects
+  puts "-"*10
 end
 
 
