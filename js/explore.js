@@ -14,4 +14,14 @@ function reverse(string) {
 
 // DRIVER CODE
 
-console.log(reverse("Hello"));
+var testString = "Hello"
+
+console.log(reverse(testString));
+
+var reversedString = reverse(testString)
+
+var havingFun = true
+
+if (havingFun) {
+	console.log(reversedString)
+}
