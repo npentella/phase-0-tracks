@@ -38,6 +38,32 @@ function pairMatch(object1, object2) {
 	return pairMatch
 };
 
+// GENERATE RANDOM TEST DATA
+
+function randomInt(min,max) {
+	return Math.floor(Math.random() * (max - min)) + min;
+}
+
+// Input: Integer for number of words requested
+// Output: Array of random words, ranging from 1 - 10 characters each
+// Define alphabet string
+// For each word requested
+	// generate random word length
+	// assign random letters from aphabet string
+function wordGenerator(wordCount) {
+	var alphabet = "abcdefghijklmnopqrstuvwxyz";
+	var words = []
+	for (var i = 0; i < wordCount; i++) {
+		var length = randomInt(1, 11);
+		var word = "";
+		for (var x = 0; x < length; x++) {
+			word += alphabet[randomInt(0, 26)]
+		}
+		words.push(word)
+	}
+	return words
+}
+
 // DRIVER CODE
 
 var testArray = ["long", "longer", "most long"];
@@ -71,9 +97,8 @@ var cat3 = {
 console.log(pairMatch(cat1, cat2));
 console.log(pairMatch(cat2, cat3));
 
-
-
-
-
-
-
+for (var i = 0; i < 10; i++) {
+	words = wordGenerator(5);
+	console.log(words);
+	console.log(findLongest(words))
+}
