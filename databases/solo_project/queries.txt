@@ -1,0 +1,52 @@
+RELEASE 2 ----------------------------------------
+1.
+sqlite> SELECT * FROM developers;
+1|Rich|32|1
+2|Kelly|6|2
+3|Brad|9|3
+4|Claire|5|1
+5|Aaron|15|2
+6|Heather|18|3
+
+2.
+sqlite> UPDATE developers SET tenure_mos=7 WHERE name="Kelly";
+
+3.
+sqlite> SELECT * FROM developers, managers WHERE developers.mgr_id = managers.id;
+1|Rich|32|1|1|Nick|24
+2|Kelly|7|2|2|Adia|20
+3|Brad|9|3|3|Erin|30
+4|Claire|5|1|1|Nick|24
+5|Aaron|15|2|2|Adia|20
+6|Heather|18|3|3|Erin|30
+
+4.
+sqlite> SELECT developers.name, managers.name FROM developers JOIN managers ON developers.mgr_id = managers.id;
+Rich|Nick
+Kelly|Adia
+Brad|Erin
+Claire|Nick
+Aaron|Adia
+Heather|Erin
+
+5.
+sqlite> DELETE FROM developers WHERE name="Heather"
+
+RELEASE 3 ----------------------------------------
+## deleted one manager row
+
+SELECT * FROM developers INNER JOIN managers ON developers.mgr_id=managers.id;
+2|Kelly|7|2|2|Adia|20
+3|Brad|9|3|3|Erin|30
+5|Aaron|15|2|2|Adia|20
+
+sqlite> SELECT * FROM developers LEFT JOIN managers ON developers.mgr_id=managers.id;
+1|Rich|32|1|||
+2|Kelly|7|2|2|Adia|20
+3|Brad|9|3|3|Erin|30
+4|Claire|5|1|||
+5|Aaron|15|2|2|Adia|20
+
+sqlite> SELECT * FROM developers LEFT JOIN managers ON developers.mgr_id=managers.id WHERE managers.id IS NULL;
+1|Rich|32|1|||
+4|Claire|5|1|||
