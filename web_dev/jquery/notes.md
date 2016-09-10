@@ -11,7 +11,7 @@
 ## Cool things I can do:
 * Selectors: http://www.w3schools.com/jquery/jquery_selectors.asp
 * Events: http://www.w3schools.com/jquery/jquery_events.asp
-Effects: http://www.w3schools.com/jquery/jquery_events.asp
+* Effects: http://www.w3schools.com/jquery/jquery_effects.asp
 	* Animate
 
 
