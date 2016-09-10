@@ -44,3 +44,53 @@ get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
 end
+
+# A GET route at '/contact' that displays and address
+
+get '/contact' do
+  "351 W Hubbard St<br>Chicago, IL 60654"
+end
+
+# A GET route at '/great_job' that takes a person's name as a query parameter and says 'Good job, [name]!'
+  # If there is no query parameter, simply says 'Good job!'
+
+get '/great_job' do
+  name = params[:name]
+  if name == nil
+    "Great Job!"
+  else "Great Job, #{name}!"
+  end
+end
+
+# A GET route at '/add/x/y' that takes two integers and responds with (returns) a string of the sum of the two numbers
+
+get '/add/:x/:y' do
+  sum = params[:x].to_i + params[:y].to_i
+  sum.to_s
+end
+
+# a GET route at '/campus/[campus-name]' that returns all students at that campus
+
+get '/campus/:campus' do
+  response = "Students at #{params[:campus]}:<br><br>"
+  students = db.execute("SELECT * FROM students WHERE campus='#{params[:campus]}'")
+  students.each do |student|
+    response << "Name: #{student['name']}<br>Age: #{student['age']}<br><br>"
+  end
+  response
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
