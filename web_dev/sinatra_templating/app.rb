@@ -6,6 +6,8 @@ set :public_folder, File.dirname(__FILE__) + '/static'
 
 db = SQLite3::Database.new("students.db")
 db.results_as_hash = true
+games_db = SQLite3::Database.new("games.db")
+games_db.results_as_hash = true
 
 # show students on the home page
 get '/' do
@@ -25,3 +27,30 @@ post '/students' do
 end
 
 # add static resources
+
+get '/games' do
+	@games = games_db.execute("SELECT * FROM games")
+	erb :games
+end
+
+post '/games' do
+	games_db.execute("INSERT INTO games (opp_name, uk_score, opp_score) VALUES (?,?,?)", [params['opp_name'], params['uk_score'].to_i, params['opp_score'].to_i])
+	@games = games_db.execute("SELECT * FROM games")
+	erb :games
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
