@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Games</title>
+</head>
+<body>
+<h1>KENTUCKY GAME TRACKER</h1>
+<h2>Season so far:</h2>
+<table>
+	<tr>
+		<th>Opponent</th>
+		<th>Kentucky Score</th>
+		<th>Opponent Score</th>
+	</tr>
+	<% @games.each do |game| %>
+		<tr>
+			<td><%= game['opp_name'] %></td>
+			<td><%= game['uk_score'] %></td>
+			<td><%= game['opp_score'] %></td>
+		</tr>
+	<% end %>
+</table>
+<h2>Log a New Game:</h2>
+<form action="/games" method="post">
+	<label>Opponent:</label>
+	<input type="text" name="opp_name">
+	<label>Kentucky Score:</label>
+	<input type="text" name="uk_score">
+	<label>Opponent Score:</label>
+	<input type="text" name="opp_score">
+	<button type="submit">Save Game</button>
+</form>
+</body>
+</html>
